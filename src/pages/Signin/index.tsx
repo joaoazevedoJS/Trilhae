@@ -27,12 +27,8 @@ const Signin: FC = () => {
     async data => {
       try {
         const schema = Yup.object().shape({
-          email: Yup.string()
-            .required('E-mail obrigatório')
-            .email('Informe um e-mail válido'),
-          password: Yup.string()
-            .min(8, 'Minimo de 8 digitos')
-            .required('Senha obrigatório'),
+          email: Yup.string().required('E-mail obrigatório'),
+          password: Yup.string().required('Senha obrigatório'),
         });
 
         await schema.validate(data, { abortEarly: false });

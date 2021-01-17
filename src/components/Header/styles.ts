@@ -39,7 +39,6 @@ export const Container = styled.header`
 
       button.header-btn {
         margin-left: 16px;
-        height: 24px;
       }
 
       button.header-btn img {
@@ -50,7 +49,7 @@ export const Container = styled.header`
 
   img,
   button {
-    height: 32px;
+    height: 30px;
   }
 
   button.header-btn {
@@ -59,7 +58,7 @@ export const Container = styled.header`
   }
 
   div.linkto + div.linkto {
-    margin-left: 16px;
+    margin-left: 8px;
   }
 
   @media (min-width: 380px) {
@@ -74,5 +73,20 @@ export const Container = styled.header`
 
   button.header-btn:hover img {
     opacity: 0.8;
+  }
+
+  button.header-btn {
+    svg {
+      font-size: 36px;
+      color: var(--color-white-primary);
+      background: var(--color-blue-primary);
+      padding: 8px;
+      border-radius: 5px;
+      transition: background-color 0.4s;
+    }
+
+    svg:hover {
+      background: ${shade(0.2, '#00AAD4')};
+    }
   }
 `;

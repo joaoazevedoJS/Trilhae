@@ -2,11 +2,12 @@ import React, { FC, useCallback, HtmlHTMLAttributes } from 'react';
 
 import { useHistory } from 'react-router-dom';
 
+import { FiLogOut } from 'react-icons/fi';
 import LogoImg from '../../assets/images/logo.png';
 import HomeIcon from '../../assets/icons/home.svg';
 
 import { Container } from './styles';
-import { getToken } from '../../services/token';
+import { deleteToken, getToken } from '../../services/token';
 
 interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
   goBackHome?: boolean;
@@ -19,6 +20,12 @@ const Header: FC<Props> = ({ goBackHome, children, ...rest }) => {
   const handleNavigationToHome = useCallback(() => {
     history.push(token ? '/logged/courses' : '/');
   }, [token, history]);
+
+  const handleLogout = useCallback(() => {
+    deleteToken();
+
+    history.push('/signin');
+  }, [history]);
 
   return (
     <Container {...rest}>
@@ -41,6 +48,12 @@ const Header: FC<Props> = ({ goBackHome, children, ...rest }) => {
               onClick={handleNavigationToHome}
             >
               <img src={HomeIcon} alt="Home" />
+            </button>
+          )}
+
+          {token && (
+            <button className="header-btn" type="button" onClick={handleLogout}>
+              <FiLogOut />
             </button>
           )}
         </div>

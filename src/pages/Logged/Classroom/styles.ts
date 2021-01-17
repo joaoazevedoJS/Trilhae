@@ -69,6 +69,11 @@ export const Container = styled.div`
       margin-bottom: 16px;
     }
 
+    span {
+      width: 70%;
+      text-align: start;
+    }
+
     button.btn-select {
       color: var(--color-white-primary);
     }

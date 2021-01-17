@@ -34,7 +34,7 @@ const Awards: FC = () => {
           <Link to="/logged/points">Pontuação</Link>
         </Header>
 
-        <TitleContentInfo title="Premios" big />
+        <TitleContentInfo title="Prêmios" big />
 
         <div className="points">
           {['1', '1', '0', '1', '1', '0', '1'].map((point, index) => (

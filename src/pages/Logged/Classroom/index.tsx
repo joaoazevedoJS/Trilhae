@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FiCircle, FiLock } from 'react-icons/fi';
 
@@ -9,50 +9,58 @@ import Button from '../../../components/Button';
 
 import { Page, Container } from './styles';
 
+import Courses from '../../../temp/Courses';
+
 interface ParamsProps {
   course: string;
 }
 
+interface LessonProps {
+  id: number;
+  title: string;
+  lessons: Array<{
+    module: number;
+    description: string;
+    open: boolean;
+    finished: boolean;
+  }>;
+}
+
 const Classroom: FC = () => {
   const params = useParams<ParamsProps>();
-  const [opensClass, setOpensClass] = useState([
-    {
-      open: true,
-      finished: false,
-    },
-    {
-      open: false,
-      finished: false,
-    },
-    {
-      open: false,
-      finished: false,
-    },
-    {
-      open: false,
-      finished: false,
-    },
-  ]);
 
+  const [lesson, setLesson] = useState<LessonProps | null>();
   const [questions, setQuestions] = useState([false, false, false]);
 
+  useEffect(() => {
+    const getLesson = Courses.filter(course => {
+      return course.id === Number(params.course);
+    })[0];
+
+    setLesson(getLesson);
+  }, [params.course]);
+
   const handleOpenNewClass = useCallback(
-    (index: number) => {
-      opensClass[index] = {
-        open: true,
-        finished: true,
-      };
-
-      if (opensClass.length > index + 1) {
-        opensClass[index + 1] = {
+    (module: number) => {
+      if (lesson) {
+        lesson.lessons[module - 1] = {
+          ...lesson.lessons[module - 1],
           open: true,
-          finished: false,
+          finished: true,
         };
-      }
 
-      setOpensClass([...opensClass]);
+        if (lesson.lessons.length > module) {
+          lesson.lessons[module] = {
+            ...lesson.lessons[module],
+            open: true,
+            finished: false,
+          };
+        }
+
+        setLesson({ ...lesson });
+      }
     },
-    [opensClass],
+    [lesson],
   );
 
   const handleSelectQuestion = useCallback(
@@ -66,6 +74,10 @@ const Classroom: FC = () => {
     [questions],
   );
 
+  if (!lesson) {
+    return <h1>Lição não encontrada!</h1>;
+  }
+
   return (
     <Page>
       <Container>
@@ -76,20 +88,23 @@ const Classroom: FC = () => {
         </Header>
 
         <div className="class">
-          <h3>Curso {params.course}</h3>
+          <h3>{lesson.title}</h3>
 
-          {opensClass.map((openClass, index) => (
+          {lesson?.lessons.map(lsn => (
             <button
-              key={index}
+              key={lsn.module}
               className="btn-select"
               type="button"
-              onClick={() => openClass.open && handleOpenNewClass(index)}
+              onClick={() => lsn.open && handleOpenNewClass(lsn.module)}
             >
-              Aula {index + 1}
-              {openClass.open && (
-                <FiCircle className={openClass.finished ? 'finished' : ''} />
+              <span>
+                Módulo {lsn.module} - {lsn.description}
+              </span>
+
+              {lsn.open && (
+                <FiCircle className={lsn.finished ? 'finished' : ''} />
               )}
-              {!openClass.open && <FiLock />}
+              {!lsn.open && <FiLock />}
             </button>
           ))}
         </div>

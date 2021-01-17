@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
@@ -33,7 +33,7 @@ const Forgot: FC = () => {
 
         await schema.validate(data, { abortEarly: false });
 
-        history.push('/signin');
+        history.push('/sucess/mail');
       } catch (err) {
         const errors = getValidationErrors(err);
 
