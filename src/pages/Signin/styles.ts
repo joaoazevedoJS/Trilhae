@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 import background from '../../assets/images/background-signin.png';
 
@@ -40,10 +41,21 @@ export const Container = styled.div`
 
     a {
       align-self: flex-end;
+      text-decoration: none;
+      color: var(--color-blue-primary);
+    }
+
+    a:hover {
+      color: ${shade(0.4, '#00AAD4')};
+    }
+
+    a.signup {
+      align-self: center;
     }
 
     button {
       width: 100%;
+      margin: 24px 0;
     }
   }
 
@@ -72,7 +84,7 @@ export const Background = styled.div`
   margin-top: -5px;
   margin-right: -20px;
   height: 250px;
-  background: url(${background}) no-repeat center;
+  background: url(${background}) no-repeat right;
   background-size: 300px;
   z-index: -1;
   grid-area: bg;
@@ -96,6 +108,8 @@ export const Background = styled.div`
 `;
 
 export const Footer = styled(FooterCP)`
+  margin-top: 120px;
+
   @media (min-width: 750px) {
     position: absolute;
     bottom: 0px;

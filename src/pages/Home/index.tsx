@@ -8,6 +8,7 @@ import {
   Container,
   ButtonContainerFixed,
   FooterBackground,
+  Footer,
 } from './styles';
 
 import Button from '../../components/Button';
@@ -15,24 +16,27 @@ import TitleContentInfo from '../../components/TitleContentInfo';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 const Home: FC = () => {
   const history = useHistory();
+
+  const handleNavigateToSignup = useCallback(() => {
+    history.push('/signup');
+  }, [history]);
+
+  const handleNavigateToSignin = useCallback(() => {
+    history.push('/signin');
+  }, [history]);
 
   const handleSubmit = useCallback(data => {
     console.log(data);
   }, []);
 
-  const handleNavigateToSignup = useCallback(() => {
-    history.push('/signin');
-  }, [history]);
-
   return (
     <>
       <Container>
         <Header>
-          <Button onClick={handleNavigateToSignup} transparent uppercase>
+          <Button onClick={handleNavigateToSignin} transparent uppercase>
             Entrar
           </Button>
         </Header>
@@ -49,7 +53,9 @@ const Home: FC = () => {
             </p>
 
             <ButtonContainerFixed>
-              <Button uppercase>Cadastre-se</Button>
+              <Button onClick={handleNavigateToSignup} uppercase>
+                Cadastre-se
+              </Button>
             </ButtonContainerFixed>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form } from '@unform/web';
 
@@ -8,9 +8,13 @@ import Input from '../../components/Input';
 
 import { Background, Container } from './styles';
 import Footer from '../../components/Footer';
+import PageSucess from '../../components/PageSucess';
+import TitleContentInfo from '../../components/TitleContentInfo';
 
 const Signup: FC = () => {
   const history = useHistory();
+
+  const [openModal, setOpenModal] = useState(false);
 
   const handleNavigateToSignin = useCallback(() => {
     history.push('/signin');
@@ -18,7 +22,29 @@ const Signup: FC = () => {
 
   const handleSubmit = useCallback(data => {
     console.log(data);
+
+    setOpenModal(true);
   }, []);
+
+  if (openModal) {
+    return (
+      <PageSucess>
+        <TitleContentInfo title="Parabéns!">
+          <h3>Você agora faz parte do Thrilhaê</h3>
+
+          <p>
+            Faça o login para começar sua jornada em busca do conhecimento.
+            Complete os desafios dessa trilha e ganhe pontos que podem ser
+            trocados por prêmios.
+          </p>
+        </TitleContentInfo>
+
+        <Button className="btn-signup" uppercase>
+          Começar
+        </Button>
+      </PageSucess>
+    );
+  }
 
   return (
     <>

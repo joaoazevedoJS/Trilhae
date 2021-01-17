@@ -19,10 +19,11 @@ export const Container = styled.button<ButtonProps>`
   border: 2px solid var(--color-green-primary);
   background: var(--color-green-primary);
   color: var(--color-white-primary);
-  transition: background-color 0.4s, color 0.4s;
+  transition: background-color 0.4s, color 0.4s, border 0.4s;
 
   &:hover {
     background: ${shade(0.2, '#0ADE34')};
+    border: 2px solid ${shade(0.2, '#0ADE34')};
   }
 
   ${props =>
@@ -40,6 +41,7 @@ export const Container = styled.button<ButtonProps>`
       &:hover {
         background: var(--color-green-primary);
         color: var(--color-white-primary);
+        border-color: #0ade34;
       }
     `}
 

@@ -1,15 +1,15 @@
-import { shade } from 'polished';
 import styled from 'styled-components';
 
 import backgroundImg1 from '../../assets/images/background-1.png';
 import backgroundImg2 from '../../assets/images/background-2.png';
+
+import FooterPG from '../../components/Footer';
 
 export const Container = styled.div`
   max-width: 1140px;
   margin: 0 auto;
 
   padding: 32px 20px;
-  margin-bottom: 40px;
   position: relative;
 
   @media (min-width: 540px) {
@@ -184,4 +184,8 @@ export const ButtonContainerFixed = styled.div`
     box-shadow: none;
     background: transparent;
   }
+`;
+
+export const Footer = styled(FooterPG)`
+  margin-bottom: 40px;
 `;

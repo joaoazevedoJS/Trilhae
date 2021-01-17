@@ -38,6 +38,10 @@ const Signin: FC = () => {
             <Link to="forgot">Esqueci a Senha</Link>
 
             <Button uppercase>Entrar</Button>
+
+            <Link className="signup" to="signup">
+              Cadastra-se
+            </Link>
           </Form>
 
           <Background />
