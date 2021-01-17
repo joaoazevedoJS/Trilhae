@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 import { useHistory } from 'react-router-dom';
 
+import { FiCircle } from 'react-icons/fi';
 import Button from '../../components/Button';
 import TitleContentInfo from '../../components/TitleContentInfo';
 import Input from '../../components/Input';
@@ -21,6 +22,8 @@ import {
 } from './styles';
 
 import getValidationErrors from '../../utils/getValidationErrors';
+
+import MapImg from '../../assets/images/map.jpg';
 
 const Home: FC = () => {
   const history = useHistory();
@@ -103,6 +106,8 @@ const Home: FC = () => {
               seu redor. Então, comece a sua jornada de aprimorameto no Trilhaê,
               e vamos juntos abrir novas trilhas para o seu futuro profissional.
             </p>
+
+            <img src={MapImg} alt="map" />
           </TitleContentInfo>
 
           <TitleContentInfo title="Mapa para a sua trilha">
@@ -120,14 +125,23 @@ const Home: FC = () => {
 
             <h2>Passo a Passo</h2>
             <p>
-              -Faça login ao entrar na nossa plataforma, para acessar o conteúdo
-              da semana.
+              <span>
+                <FiCircle /> Faça login ao entrar na nossa plataforma, para
+                acessar o conteúdo da semana.
+              </span>
               <br />
-              -Assista a tudo que estiver disponível, leia tudo.
+              <span>
+                <FiCircle /> Assista a tudo que estiver disponível, leia tudo.
+              </span>
               <br />
-              -Tire dúvidas (procure mais sobre o conteúdo pela internet!)
+              <span>
+                <FiCircle /> Tire dúvidas (procure mais sobre o conteúdo pela
+                internet!)
+              </span>
               <br />
-              -Realize as tarefas para concluir cada fase.
+              <span>
+                <FiCircle /> Realize as tarefas para concluir cada fase.
+              </span>
             </p>
 
             <p>
@@ -137,6 +151,7 @@ const Home: FC = () => {
             </p>
 
             <h2>Premiação</h2>
+
             <p>
               Ao completar a trilha, enfrentando com êxito todos os desafios,
               você vai ter acesso a um certificado que as empresas procuram!

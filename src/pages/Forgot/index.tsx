@@ -12,7 +12,6 @@ import Footer from '../../components/Footer';
 import { Content } from '../../assets/styles/Content';
 import { Background, Container } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
-import { setToken } from '../../services/token';
 
 const Forgot: FC = () => {
   const history = useHistory();
@@ -20,7 +19,7 @@ const Forgot: FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const handleNavigateToSignin = useCallback(() => {
-    history.push('/signup');
+    history.push('/signin');
   }, [history]);
 
   const handleSubmit = useCallback(
@@ -30,16 +29,11 @@ const Forgot: FC = () => {
           email: Yup.string()
             .required('E-mail obrigatório')
             .email('Informe um e-mail válido'),
-          password: Yup.string()
-            .min(8, 'Minimo de 8 digitos')
-            .required('Senha obrigatório'),
         });
 
         await schema.validate(data, { abortEarly: false });
 
-        setToken('sdjalkgbfsdalz/knavlkajszçfalb');
-
-        history.push('/logged/courses');
+        history.push('/signin');
       } catch (err) {
         const errors = getValidationErrors(err);
 
@@ -54,26 +48,19 @@ const Forgot: FC = () => {
       <Content>
         <Header goBackHome>
           <Button blue onClick={handleNavigateToSignin} transparent uppercase>
-            Cadastra-se
+            Entrar
           </Button>
         </Header>
 
         <div className="form-container">
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Entrar</h1>
+            <h1>Esqueceu a senha?</h1>
 
             <Input name="email" placeholder="E-mail: " />
-            <Input name="password" type="password" placeholder="Senha:" />
-
-            <Link to="forgot">Esqueci a Senha</Link>
 
             <Button type="submit" uppercase>
-              Entrar
+              Enivar
             </Button>
-
-            <Link className="signup" to="signup">
-              Cadastra-se
-            </Link>
           </Form>
 
           <Background />

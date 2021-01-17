@@ -5,9 +5,9 @@ import { FiCircle, FiLock } from 'react-icons/fi';
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
 import Link from '../../../components/Link';
+import Button from '../../../components/Button';
 
 import { Page, Container } from './styles';
-import Button from '../../../components/Button';
 
 interface ParamsProps {
   course: string;

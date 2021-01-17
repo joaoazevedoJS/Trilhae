@@ -89,6 +89,20 @@ export const Container = styled.div`
   section {
     margin-top: 32px;
 
+    img {
+      width: 100%;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 16px;
+        margin-right: 8px;
+      }
+    }
+
     h2 {
       font-size: 18px;
       width: 100%;
