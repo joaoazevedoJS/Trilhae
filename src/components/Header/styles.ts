@@ -12,7 +12,7 @@ export const Container = styled.header`
   left: 0;
   z-index: 99;
 
-  div {
+  div.content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,6 +21,20 @@ export const Container = styled.header`
     width: 100%;
     height: 100%;
     margin: 0 auto;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      button.header-btn {
+        margin-left: 16px;
+        height: 24px;
+      }
+
+      button.header-btn img {
+        height: 100%;
+      }
+    }
   }
 
   img,
@@ -28,12 +42,12 @@ export const Container = styled.header`
     height: 32px;
   }
 
-  button:first-child {
+  button.header-btn {
     border: none;
     background: 0;
   }
 
-  button:first-child:hover img {
+  button.header-btn:hover img {
     opacity: 0.8;
   }
 `;

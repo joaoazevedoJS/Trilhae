@@ -1,12 +1,17 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, HtmlHTMLAttributes } from 'react';
 
 import { useHistory } from 'react-router-dom';
 
 import LogoImg from '../../assets/images/logo.png';
+import HomeIcon from '../../assets/icons/home.svg';
 
 import { Container } from './styles';
 
-const Header: FC = ({ children }) => {
+interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
+  goBackHome?: boolean;
+}
+
+const Header: FC<Props> = ({ goBackHome, children, ...rest }) => {
   const history = useHistory();
 
   const handleNavigationToHome = useCallback(() => {
@@ -14,13 +19,29 @@ const Header: FC = ({ children }) => {
   }, [history]);
 
   return (
-    <Container>
-      <div>
-        <button type="button" onClick={handleNavigationToHome}>
+    <Container {...rest}>
+      <div className="content">
+        <button
+          className="header-btn"
+          type="button"
+          onClick={handleNavigationToHome}
+        >
           <img src={LogoImg} alt="Trilhaê" />
         </button>
 
-        {children}
+        <div>
+          {children}
+
+          {goBackHome && (
+            <button
+              className="header-btn"
+              type="button"
+              onClick={handleNavigationToHome}
+            >
+              <img src={HomeIcon} alt="Home" />
+            </button>
+          )}
+        </div>
       </div>
     </Container>
   );

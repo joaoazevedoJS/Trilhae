@@ -1,11 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, HtmlHTMLAttributes } from 'react';
 import { AiFillCopyrightCircle, AiOutlineWhatsApp } from 'react-icons/ai';
 import { FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
 
 import { Container } from './styles';
 
-const Footer: FC = () => (
-  <Container>
+type Props = HtmlHTMLAttributes<HTMLDivElement>;
+
+const Footer: FC<Props> = ({ ...rest }) => (
+  <Container {...rest}>
     <div className="content">
       <div>
         <p>

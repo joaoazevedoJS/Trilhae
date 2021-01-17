@@ -23,7 +23,7 @@ const Signup: FC = () => {
   return (
     <>
       <Container>
-        <Header>
+        <Header goBackHome>
           <Button onClick={handleNavigateToSignin} transparent uppercase>
             Acessar conta
           </Button>
