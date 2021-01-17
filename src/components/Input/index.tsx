@@ -1,6 +1,14 @@
-import React, { FC, InputHTMLAttributes, useEffect, useRef } from 'react';
+import React, {
+  FC,
+  InputHTMLAttributes,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useField } from '@unform/core';
 
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { Container } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -9,6 +17,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input: FC<InputProps> = ({ name, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
   useEffect(() => {
@@ -19,9 +30,26 @@ const Input: FC<InputProps> = ({ name, ...rest }) => {
     });
   }, [fieldName, registerField]);
 
+  const handleShowPassword = useCallback(() => {
+    setShowPassword(!showPassword);
+  }, [showPassword]);
+
   return (
     <Container isErrored={!!error}>
-      <input defaultValue={defaultValue} ref={inputRef} {...rest} />
+      <input
+        defaultValue={defaultValue}
+        ref={inputRef}
+        {...rest}
+        type={showPassword ? 'text' : rest.type}
+      />
+
+      {rest.type === 'password' && !showPassword && (
+        <FiEye onClick={handleShowPassword} />
+      )}
+
+      {rest.type === 'password' && showPassword && (
+        <FiEyeOff onClick={handleShowPassword} />
+      )}
     </Container>
   );
 };

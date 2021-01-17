@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import TitleContentInfo from '../../components/TitleContentInfo';
+import Footer from '../../components/Footer';
 
-import { Container, Background, Footer } from './styles';
+import { Content } from '../../assets/styles/Content';
+import { Container, Background } from './styles';
 
 const SendMailSucessed: FC = () => {
   return (
-    <>
-      <Container>
+    <Container>
+      <Content>
         <Header goBackHome />
 
         <div className="page-content">
@@ -26,10 +28,9 @@ const SendMailSucessed: FC = () => {
         </div>
 
         <Background />
-      </Container>
-
+      </Content>
       <Footer />
-    </>
+    </Container>
   );
 };
 

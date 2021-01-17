@@ -20,7 +20,8 @@ import Select from '../../components/Select';
 
 import ibgeApi from '../../services/ibgeApi';
 
-import { Page, Background, Container } from './styles';
+import { Content } from '../../assets/styles/Content';
+import { Background, Container } from './styles';
 
 interface SelectProps {
   value: string;
@@ -90,8 +91,8 @@ const Signup: FC = () => {
   );
 
   return (
-    <Page>
-      <Container>
+    <Container>
+      <Content>
         <Header goBackHome>
           <Button blue onClick={handleNavigateToSignin} transparent uppercase>
             Acessar conta
@@ -139,10 +140,10 @@ const Signup: FC = () => {
 
           <Background />
         </div>
-      </Container>
+      </Content>
 
       <Footer />
-    </Page>
+    </Container>
   );
 };
 

@@ -10,8 +10,7 @@ export const Page = styled.div`
   }
 
   footer {
-    position: absolute;
-    bottom: 0;
+    margin: 0;
   }
 `;
 

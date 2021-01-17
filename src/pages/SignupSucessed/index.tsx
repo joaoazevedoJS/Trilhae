@@ -1,11 +1,13 @@
 import React, { FC, useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import Button from '../../components/Button';
 
+import Button from '../../components/Button';
 import Header from '../../components/Header';
 import TitleContentInfo from '../../components/TitleContentInfo';
+import Footer from '../../components/Footer';
 
-import { Container, Background, Footer } from './styles';
+import { Content } from '../../assets/styles/Content';
+import { Container, Background } from './styles';
 
 const SignupSucessed: FC = () => {
   const history = useHistory();
@@ -15,8 +17,8 @@ const SignupSucessed: FC = () => {
   }, [history]);
 
   return (
-    <>
-      <Container>
+    <Container>
+      <Content>
         <Header goBackHome />
 
         <div className="page-content">
@@ -38,10 +40,10 @@ const SignupSucessed: FC = () => {
         </div>
 
         <Background />
-      </Container>
+      </Content>
 
       <Footer />
-    </>
+    </Container>
   );
 };
 

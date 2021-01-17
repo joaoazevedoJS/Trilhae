@@ -1,20 +1,5 @@
 import styled from 'styled-components';
 
-export const Page = styled.div`
-  padding-top: 80px;
-
-  position: relative;
-
-  div.courses {
-    margin-bottom: 80px;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 0;
-  }
-`;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,7 +7,8 @@ export const Container = styled.div`
   max-width: 1140px;
   margin: 0 auto;
 
-  padding: 32px 20px 0 20px;
+  padding-top: 100px;
+
   position: relative;
 
   div.courses {
@@ -46,6 +32,11 @@ export const Container = styled.div`
 
 export const CardCourse = styled.div`
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   padding: 24px;
   width: 100%;
   box-shadow: 0px 0px 8px #00000026;
@@ -76,10 +67,12 @@ export const CardCourse = styled.div`
 
   p {
     line-height: 24px;
+    margin-bottom: 24px;
   }
 
   button {
-    margin-top: 24px;
+    margin-top: auto;
+    max-height: 100%;
     height: 36px;
     width: 100%;
   }

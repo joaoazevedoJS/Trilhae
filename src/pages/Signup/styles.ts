@@ -2,21 +2,10 @@ import styled from 'styled-components';
 
 import background from '../../assets/images/background-signup.png';
 
-export const Page = styled.div`
-  min-height: 100vh;
-
-  position: relative;
-
-  footer {
-    position: absolute;
-  }
-`;
-
 export const Container = styled.div`
-  max-width: 1140px;
   margin: 0 auto;
+  padding-top: 32px;
 
-  padding: 32px 20px 0 20px;
   position: relative;
 
   h1 {

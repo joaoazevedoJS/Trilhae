@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.footer`
-  background: var(--color-blue-primary);
-  width: 100%;
-  position: absolute;
-  left: 0;
+  display: flex;
+  align-items: center;
 
-  padding: 16px;
+  width: 100vw;
   margin-top: 32px;
+  height: 56px;
+  background: var(--color-blue-primary);
+  padding: 16px;
 
   div.content {
     display: flex;

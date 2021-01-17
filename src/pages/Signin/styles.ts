@@ -3,26 +3,9 @@ import { shade } from 'polished';
 
 import background from '../../assets/images/background-signin.png';
 
-export const Page = styled.div`
-  min-height: 100vh;
-
-  position: relative;
-
-  footer {
-    position: absolute;
-    margin-top: -15px;
-  }
-`;
-
 export const Container = styled.div`
-  display: flex;
-  place-content: center;
-  max-width: 1140px;
-  width: 100%;
-  margin: 0 auto;
-
-  padding: 32px 20px 0 20px;
   position: relative;
+  height: calc(100vh - 90px);
 
   div.form-container {
     width: 100%;
@@ -72,8 +55,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: 750px) {
-    height: calc(100vh - 41px);
-
     div.form-container {
       display: grid;
       align-items: center;

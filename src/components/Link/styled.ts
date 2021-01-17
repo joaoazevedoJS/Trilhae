@@ -11,4 +11,8 @@ export const Container = styled.div<Props>`
       border-bottom: 2px solid var(--color-blue-primary);
       border-radius: 2px;
     `}
+
+  @media (min-width: 750px) {
+    font-size: 16px;
+  }
 `;

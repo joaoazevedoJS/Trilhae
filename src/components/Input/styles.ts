@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 interface ContainerProps {
   isErrored?: boolean;
@@ -10,6 +11,9 @@ export const Container = styled.div<ContainerProps>`
   padding: 8px 12px;
   border: 1px solid #00000016;
   border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  column-gap: 16px;
 
   input {
     width: 100%;
@@ -18,4 +22,15 @@ export const Container = styled.div<ContainerProps>`
   }
 
   margin-bottom: 24px;
+
+  svg {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-blue-primary);
+    transition: color 0.4s;
+  }
+
+  svg:hover {
+    color: ${shade(0.2, '#00AAD4')};
+  }
 `;

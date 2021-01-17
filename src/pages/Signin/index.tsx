@@ -7,7 +7,8 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Footer from '../../components/Footer';
 
-import { Page, Background, Container } from './styles';
+import { Content } from '../../assets/styles/Content';
+import { Background, Container } from './styles';
 
 const Signin: FC = () => {
   const history = useHistory();
@@ -26,8 +27,8 @@ const Signin: FC = () => {
   );
 
   return (
-    <Page>
-      <Container>
+    <Container>
+      <Content>
         <Header goBackHome>
           <Button blue onClick={handleNavigateToSignin} transparent uppercase>
             Cadastra-se
@@ -39,7 +40,7 @@ const Signin: FC = () => {
             <h1>Entrar</h1>
 
             <Input name="email" placeholder="E-mail: " />
-            <Input name="password" placeholder="Crie uma senha:" />
+            <Input name="password" type="password" placeholder="Senha:" />
 
             <Link to="forgot">Esqueci a Senha</Link>
 
@@ -52,10 +53,10 @@ const Signin: FC = () => {
 
           <Background />
         </div>
-      </Container>
+      </Content>
 
       <Footer />
-    </Page>
+    </Container>
   );
 };
 

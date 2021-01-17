@@ -3,20 +3,14 @@ import { shade } from 'polished';
 
 import background from '../../assets/images/background-page-sucess.png';
 
-import FooterPG from '../../components/Footer';
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  height: calc(100vh - 32px);
-  max-width: 1140px;
+  height: 100vh;
   width: 100%;
-  margin: 0 auto;
-  margin-top: 40px;
 
-  padding: 32px 20px 0 20px;
-  position: relative;
+  padding-top: 32px;
 
   div {
     margin-top: 0;
@@ -58,10 +52,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 870px) {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    align-items: center;
-    margin-top: 0;
+    display: flex;
 
     div.page-content {
       width: 530px;
@@ -75,8 +66,8 @@ export const Container = styled.div`
 `;
 
 export const Background = styled.div`
-  margin-bottom: -40px;
-  height: 100%;
+  margin-top: 40px;
+  height: 350px;
   margin-right: -20px;
   background: url(${background}) no-repeat center;
   background-size: cover;
@@ -89,8 +80,9 @@ export const Background = styled.div`
     background: url(${background}) no-repeat right;
     background-size: 400px;
     width: 100%;
+    height: 100%;
     position: absolute;
-    right: 0;
+    right: 0px;
     z-index: -1;
     margin-right: 0px;
   }
@@ -101,13 +93,5 @@ export const Background = styled.div`
 
   @media (min-width: 950px) {
     background-size: 550px;
-  }
-`;
-
-export const Footer = styled(FooterPG)`
-  @media (min-width: 750px) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
 `;
