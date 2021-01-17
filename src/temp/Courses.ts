@@ -8,6 +8,12 @@ interface Props {
     open: boolean;
     finished: boolean;
   }>;
+  question: string;
+  questions: Array<{
+    id: number;
+    description: string;
+    selected: boolean;
+  }>;
 }
 
 const Courses: Array<Props> = [
@@ -44,6 +50,25 @@ const Courses: Array<Props> = [
         description: 'Exercitando a assertividade',
         open: false,
         finished: false,
+      },
+    ],
+    question:
+      'Existem 5 tipos de comunicação temos a Verbal, Escrita, Oral, Não Verbal, qual seria a 5 comunicação:',
+    questions: [
+      {
+        id: 1,
+        description: 'Assertiva',
+        selected: false,
+      },
+      {
+        id: 2,
+        description: 'Digital',
+        selected: false,
+      },
+      {
+        id: 3,
+        description: 'Não Escrita',
+        selected: false,
       },
     ],
   },
@@ -85,6 +110,24 @@ const Courses: Array<Props> = [
         description: 'Ativadores Criativos',
         open: false,
         finished: false,
+      },
+    ],
+    question: 'Para possuir um pensamento criativos temos que:',
+    questions: [
+      {
+        id: 1,
+        description: 'Nascer criativo',
+        selected: false,
+      },
+      {
+        id: 2,
+        description: 'Aprender ferramentas para desenvolver a criatividade',
+        selected: false,
+      },
+      {
+        id: 3,
+        description: 'É um dom natural',
+        selected: false,
       },
     ],
   },
@@ -130,6 +173,24 @@ const Courses: Array<Props> = [
         finished: false,
       },
     ],
+    question: 'O que é resiliência?',
+    questions: [
+      {
+        id: 1,
+        description: 'Saber se defender sozinho',
+        selected: false,
+      },
+      {
+        id: 2,
+        description: 'Se abater em circunstâncias adversas',
+        selected: false,
+      },
+      {
+        id: 3,
+        description: 'Capacidade de lidar com problemas',
+        selected: false,
+      },
+    ],
   },
   {
     id: 4,
@@ -170,6 +231,28 @@ const Courses: Array<Props> = [
         description: 'Bem estar',
         open: false,
         finished: false,
+      },
+    ],
+    question:
+      'Após aprender empatia, se você ver uma pessoa com dificuldades, como você irá agir?',
+    questions: [
+      {
+        id: 1,
+        selected: false,
+        description:
+          'Me colocarei no lugar da pessoa para compreender suas dificuldades',
+      },
+      {
+        id: 2,
+        description:
+          'Irei julgar a pessoa porque ela está com dificuldades por sua própria culpa.',
+        selected: false,
+      },
+      {
+        id: 3,
+        description:
+          'Darei conselhos sobre minha experiência sobre situações que passei.',
+        selected: false,
       },
     ],
   },
@@ -242,6 +325,25 @@ const Courses: Array<Props> = [
         finished: false,
       },
     ],
+    question: 'Qual o grande desafio da liderança ambidestra?',
+    questions: [
+      {
+        id: 1,
+        description: 'Ser um chefe que impõe respeito acima de tudo.',
+        selected: false,
+      },
+      {
+        id: 2,
+        description: 'Ser amigo de todos os seus funcionários.',
+        selected: false,
+      },
+      {
+        id: 3,
+        description:
+          'Manter um equilíbrio entre a gestão baseada em dados e a gestão holística.',
+        selected: false,
+      },
+    ],
   },
   {
     id: 6,
@@ -283,51 +385,24 @@ const Courses: Array<Props> = [
         finished: false,
       },
     ],
-  },
-  {
-    id: 7,
-    title: 'Oratória',
-    description: `Oratória é a arte de falar em público de forma estruturada e
-    deliberada, com a intenção de informar, influenciar, ou entreter
-    os ouvintes. A oratória refere-se ao conjunto de regras e técnicas
-    adequadas para produzir e apresentar um discurso e apurar as
-    qualidades pessoais do orador.`,
-    lessons: [
+    question: 'Como ser uma pessoa ética no trabalho?',
+    questions: [
       {
-        module: 1,
-        description: 'Consciência corporal e coragem',
-        open: true,
-        finished: false,
+        id: 1,
+        description:
+          'Se preocupar com o que seus colegas de equipe estão fazendo de certo e errado.',
+        selected: false,
       },
       {
-        module: 2,
-        description: 'Linguagem corporal e sintonia',
-        open: false,
-        finished: false,
+        id: 2,
+        description: 'Ser uma pessoa justa e separar o certo e errado.',
+        selected: false,
       },
       {
-        module: 3,
-        description: 'Voz',
-        open: false,
-        finished: false,
-      },
-      {
-        module: 4,
-        description: 'Storytelling',
-        open: false,
-        finished: false,
-      },
-      {
-        module: 5,
-        description: 'Comunicação assertiva',
-        open: false,
-        finished: false,
-      },
-      {
-        module: 6,
-        description: 'Desafio final e oratória',
-        open: false,
-        finished: false,
+        id: 3,
+        selected: false,
+        description:
+          'Reportar tudo aos seus superiores quando houver algum problema.',
       },
     ],
   },

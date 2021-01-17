@@ -95,7 +95,7 @@ export const Container = styled.div`
 
     p {
       margin-bottom: 24px;
-      font-size: 14px;
+      font-size: 18px !important;
       line-height: 24px;
       text-align: center;
     }
@@ -107,6 +107,9 @@ export const Container = styled.div`
 
     button.btn-select {
       font-size: 12px;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      text-align: start;
     }
 
     svg {

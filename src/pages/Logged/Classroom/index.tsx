@@ -18,11 +18,18 @@ interface ParamsProps {
 interface LessonProps {
   id: number;
   title: string;
+  description: string;
   lessons: Array<{
     module: number;
     description: string;
     open: boolean;
     finished: boolean;
+  }>;
+  question: string;
+  questions: Array<{
+    id: number;
+    description: string;
+    selected: boolean;
   }>;
 }
 
@@ -30,7 +37,6 @@ const Classroom: FC = () => {
   const params = useParams<ParamsProps>();
 
   const [lesson, setLesson] = useState<LessonProps | null>();
-  const [questions, setQuestions] = useState([false, false, false]);
 
   useEffect(() => {
     const getLesson = Courses.filter(course => {
@@ -64,14 +70,21 @@ const Classroom: FC = () => {
   );
 
   const handleSelectQuestion = useCallback(
-    (index: number) => {
-      const mapQuestions = questions.map((_, indexQ) => {
-        return indexQ === index;
+    (id: number) => {
+      if (!lesson) return;
+
+      const questions = lesson.questions.map(lsn => {
+        return {
+          ...lsn,
+          selected: lsn.id === id,
+        };
       });
 
-      setQuestions(mapQuestions);
+      lesson.questions = questions;
+
+      setLesson({ ...lesson });
     },
-    [questions],
+    [lesson],
   );
 
   if (!lesson) {
@@ -125,20 +138,17 @@ const Classroom: FC = () => {
             próxima etapa do seu curso.
           </h3>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut consectetur adipiscing elit?
-          </p>
+          <p>{lesson.question}</p>
 
-          {questions.map((question, index) => (
+          {lesson.questions.map(question => (
             <button
               className="btn-select"
-              key={index}
+              key={question.id}
               type="button"
-              onClick={() => handleSelectQuestion(index)}
+              onClick={() => handleSelectQuestion(question.id)}
             >
-              <FiCircle className={question ? 'finished' : ''} />
-              Lorem ipsum dolor sit amet, consectetur adipiscing
+              <FiCircle className={question.selected ? 'finished' : ''} />
+              <span>{question.description}</span>
             </button>
           ))}
 
