@@ -72,7 +72,7 @@ const Home: FC = () => {
           <div>
             <h1>
               Desenvolva competências procuradas pelo mercado de trabalho no
-              século XXI
+              século 21
             </h1>
 
             <p>

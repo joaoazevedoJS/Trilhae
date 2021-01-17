@@ -68,7 +68,7 @@ export const Container = styled.div`
       min-height: 700px;
 
       div {
-        width: 450px;
+        width: 460px;
       }
 
       h1 {
@@ -87,7 +87,10 @@ export const Container = styled.div`
     margin-top: 32px;
 
     h2 {
-      margin-top: 16px;
+      font-size: 18px;
+      width: 100%;
+      margin: 16px 0;
+      font-weight: 700;
     }
 
     @media (min-width: 900px) {
