@@ -70,15 +70,17 @@ const Home: FC = () => {
 
         <main>
           <div>
-            <h1>
-              Desenvolva competências procuradas pelo mercado de trabalho no
-              século 21
-            </h1>
+            <div className="main-content">
+              <h1>
+                Desenvolva competências procuradas pelo mercado de trabalho no
+                século 21
+              </h1>
 
-            <p>
-              Quer se destacar e conseguir prêmios durante uma trilha que
-              prepara você para o trabalho e para a vida? Vem com a gente!
-            </p>
+              <p>
+                Quer se destacar e conseguir prêmios durante uma trilha que
+                prepara você para o trabalho e para a vida? Vem com a gente!
+              </p>
+            </div>
 
             <ButtonContainerFixed>
               <Button onClick={handleNavigateToSignup} uppercase>
@@ -93,14 +95,13 @@ const Home: FC = () => {
         <section>
           <TitleContentInfo title="O que é o Trilhaê?">
             <p>
-              A Trilhaê é uma plataforma que oferece <strong>desafios</strong>{' '}
-              para aprimorar as <strong>habilidades socioemocionais</strong> de
-              seus usuários, preocupada em auxiliar os jovens nos seus futuros
-              profissionais. As empresas buscam colaboradores que sejam capazes
-              de manter bons relacionamentos, de dialogar e compreender o outro
-              e o mundo ao seu redor. Então, comece a sua jornada de
-              aprimorameto no Trilhaê, e vamos juntos abrir{' '}
-              <strong>novas trilhas para o seu futuro profissional.</strong>
+              A Trilhaê é uma plataforma que oferece desafios para aprimorar as
+              habilidades socioemocionais de seus usuários, preocupada em
+              auxiliar os jovens nos seus futuros profissionais. As empresas
+              buscam colaboradores que sejam capazes de manter bons
+              relacionamentos, de dialogar e compreender o outro e o mundo ao
+              seu redor. Então, comece a sua jornada de aprimorameto no Trilhaê,
+              e vamos juntos abrir novas trilhas para o seu futuro profissional.
             </p>
           </TitleContentInfo>
 
@@ -112,15 +113,15 @@ const Home: FC = () => {
 
             <h2>Objetivo</h2>
             <p>
-              Completar as <strong>6 fases</strong> (Comunicação eficaz,
-              Pensamento Criativo, Resiliência, Empatia, Liderança e Ética no
-              trabalho). Uma fase será liberada por semana.
+              Completar as 6 fases (Comunicação eficaz, Pensamento Criativo,
+              Resiliência, Empatia, Liderança e Ética no trabalho). Uma fase
+              será liberada por semana.
             </p>
 
             <h2>Passo a Passo</h2>
             <p>
-              -Faça <strong>login</strong> ao entrar na nossa plataforma, para
-              acessar o <strong>conteúdo da semana.</strong>
+              -Faça login ao entrar na nossa plataforma, para acessar o conteúdo
+              da semana.
               <br />
               -Assista a tudo que estiver disponível, leia tudo.
               <br />
@@ -137,11 +138,10 @@ const Home: FC = () => {
 
             <h2>Premiação</h2>
             <p>
-              Ao <strong>completar a trilha</strong>, enfrentando com êxito
-              todos os desafios, você vai ter acesso a um{' '}
-              <strong>certificado</strong> que as empresas procuram! Nossas
-              empresas parceiras acreditam no desenvolvimento das habilidades
-              socioemocionais dos jovens.
+              Ao completar a trilha, enfrentando com êxito todos os desafios,
+              você vai ter acesso a um certificado que as empresas procuram!
+              Nossas empresas parceiras acreditam no desenvolvimento das
+              habilidades socioemocionais dos jovens.
             </p>
           </TitleContentInfo>
 

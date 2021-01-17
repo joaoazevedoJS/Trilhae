@@ -12,7 +12,7 @@ const Footer: FC<Props> = ({ ...rest }) => (
       <div>
         <p>
           <AiFillCopyrightCircle />
-          2020
+          2021
         </p>
 
         <p>Trilhaê</p>

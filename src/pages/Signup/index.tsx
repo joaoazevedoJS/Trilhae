@@ -133,8 +133,8 @@ const Signup: FC = () => {
         </Header>
 
         <h1>
-          Preencha o formulário para fazer parte e vamos juntos abrir novas
-          trilhas para o seu futuro profissional.
+          Você está a um passo de começar uma trilha transformadora. Preencha o
+          formulário e vamos lá!
         </h1>
 
         <div className="form-container">

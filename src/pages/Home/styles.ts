@@ -42,7 +42,6 @@ export const Container = styled.div`
     p {
       font-size: 14px;
       line-height: 24px;
-      text-align: center;
       margin-bottom: 64px;
     }
 
@@ -66,6 +65,10 @@ export const Container = styled.div`
 
     @media (min-width: 900px) {
       min-height: 700px;
+
+      div.main-content {
+        margin-top: -200px;
+      }
 
       div {
         width: 460px;
@@ -97,10 +100,6 @@ export const Container = styled.div`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 32px;
-
-      div.lastContent {
-        margin-top: -200px;
-      }
     }
   }
 
