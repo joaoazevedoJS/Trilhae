@@ -1,3 +1,4 @@
+import { shade } from 'polished';
 import styled from 'styled-components';
 
 import backgroundImg1 from '../../assets/images/background-1.png';
@@ -14,29 +15,6 @@ export const Container = styled.div`
   @media (min-width: 540px) {
     margin-bottom: 0px;
     padding-bottom: 0px;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 32px;
-    max-width: 1140px;
-    width: 100%;
-    margin: 0 auto;
-    margin-left: -20px;
-
-    box-shadow: 0px 0px 8px #00000016;
-    background: var(--color-white-primary);
-    padding: 32px 20px;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-
-    img,
-    button {
-      height: 32px;
-    }
   }
 
   main {
@@ -138,41 +116,6 @@ export const Container = styled.div`
       }
     }
   }
-
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: var(--color-blue-primary);
-    width: calc(100% + 40px);
-    margin-left: -20px;
-
-    padding: 16px;
-    margin-top: 32px;
-
-    div,
-    div p {
-      display: flex;
-      align-items: center;
-    }
-
-    div p {
-      color: var(--color-white-primary);
-      margin-right: 8px;
-      text-transform: uppercase;
-    }
-
-    svg {
-      margin-right: 8px;
-      fill: var(--color-blue-primary);
-      color: var(--color-white-primary);
-      background: #fff;
-      border-radius: 50%;
-      padding: 4px;
-      font-size: 24px;
-    }
-  }
 `;
 
 export const Background = styled.div`
@@ -200,7 +143,7 @@ export const Background = styled.div`
     background: url(${backgroundImg1}) no-repeat right;
 
     width: 100% !important;
-    height: 100%;
+    height: 500px;
   }
 `;
 
