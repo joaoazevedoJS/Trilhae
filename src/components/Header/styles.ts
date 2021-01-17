@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Container = styled.header`
   height: 32px;
@@ -21,6 +22,16 @@ export const Container = styled.header`
     width: 100%;
     height: 100%;
     margin: 0 auto;
+
+    a {
+      align-self: flex-end;
+      text-decoration: none;
+      color: var(--color-blue-primary);
+    }
+
+    a:hover {
+      color: ${shade(0.4, '#00AAD4')};
+    }
 
     div {
       display: flex;
@@ -45,6 +56,20 @@ export const Container = styled.header`
   button.header-btn {
     border: none;
     background: 0;
+  }
+
+  div.linkto + div.linkto {
+    margin-left: 16px;
+  }
+
+  @media (min-width: 380px) {
+    div.child {
+      margin-right: 24px;
+    }
+
+    div.linkto + div.linkto {
+      margin-left: 24px;
+    }
   }
 
   button.header-btn:hover img {

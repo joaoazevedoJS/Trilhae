@@ -187,5 +187,7 @@ export const ButtonContainerFixed = styled.div`
 `;
 
 export const Footer = styled(FooterPG)`
-  margin-bottom: 40px;
+  @media (max-width: 540px) {
+    padding-bottom: 80px;
+  }
 `;

@@ -30,7 +30,7 @@ const Header: FC<Props> = ({ goBackHome, children, ...rest }) => {
         </button>
 
         <div>
-          {children}
+          <div className="child">{children}</div>
 
           {goBackHome && (
             <button

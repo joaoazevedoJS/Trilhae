@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
 interface ButtonProps {
-  bgHover?: string;
   uppercase?: boolean;
   transparent?: boolean;
+  blue?: boolean;
 }
 
 export const Container = styled.button<ButtonProps>`
@@ -45,13 +45,17 @@ export const Container = styled.button<ButtonProps>`
       }
     `}
 
-  ${props =>
-    props.bgHover &&
+    ${props =>
+    props.blue &&
     css`
-      border-color: ${props.bgHover};
+      color: var(--color-blue-primary);
+      background: var(--color-white-primary);
+      border-color: var(--color-blue-primary);
 
       &:hover {
-        background: ${shade(0.2, props.bgHover)};
+        background: var(--color-blue-primary);
+        color: var(--color-white-primary);
+        border-color: var(--color-blue-primary);
       }
     `}
 `;

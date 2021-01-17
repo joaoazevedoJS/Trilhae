@@ -15,15 +15,20 @@ const Signin: FC = () => {
     history.push('/signup');
   }, [history]);
 
-  const handleSubmit = useCallback(data => {
-    console.log(data);
-  }, []);
+  const handleSubmit = useCallback(
+    data => {
+      console.log(data);
+
+      history.push('/logged/courses');
+    },
+    [history],
+  );
 
   return (
     <>
       <Container>
         <Header goBackHome>
-          <Button onClick={handleNavigateToSignin} transparent uppercase>
+          <Button blue onClick={handleNavigateToSignin} transparent uppercase>
             Cadastra-se
           </Button>
         </Header>

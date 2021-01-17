@@ -4,10 +4,11 @@ import { Container } from './styles';
 
 interface Props {
   title: string;
+  big?: boolean;
 }
 
-const TitleContentInfo: FC<Props> = ({ title, children }) => (
-  <Container>
+const TitleContentInfo: FC<Props> = ({ title, big, children }) => (
+  <Container big={big}>
     <h3>{title}</h3>
 
     {children}

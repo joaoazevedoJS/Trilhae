@@ -28,6 +28,10 @@ const Home: FC = () => {
     history.push('/signin');
   }, [history]);
 
+  const handleSendMessage = useCallback(() => {
+    history.push('/sucess/mail');
+  }, []);
+
   const handleSubmit = useCallback(data => {
     console.log(data);
   }, []);
@@ -36,7 +40,7 @@ const Home: FC = () => {
     <>
       <Container>
         <Header>
-          <Button onClick={handleNavigateToSignin} transparent uppercase>
+          <Button blue onClick={handleNavigateToSignin} transparent uppercase>
             Entrar
           </Button>
         </Header>
@@ -122,7 +126,9 @@ const Home: FC = () => {
             <FooterBackground />
           </div>
 
-          <Button uppercase>Enviar</Button>
+          <Button onClick={handleSendMessage} uppercase>
+            Enviar
+          </Button>
         </Form>
       </Container>
 

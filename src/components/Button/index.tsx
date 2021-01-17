@@ -3,22 +3,22 @@ import React, { ButtonHTMLAttributes, FC } from 'react';
 import { Container } from './styles';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  bgHover?: string;
   uppercase?: boolean;
   transparent?: boolean;
+  blue?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
-  bgHover,
+  blue,
   uppercase,
   transparent,
   children,
   ...rest
 }) => (
   <Container
+    blue={blue}
     uppercase={uppercase}
     transparent={transparent}
-    bgHover={bgHover}
     {...rest}
   >
     {children}
