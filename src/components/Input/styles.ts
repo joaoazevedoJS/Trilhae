@@ -43,4 +43,9 @@ export const Container = styled.div<ContainerProps>`
   svg:hover {
     color: ${shade(0.2, '#00AAD4')};
   }
+
+  .icon-group {
+    display: flex;
+    align-items: center;
+  }
 `;

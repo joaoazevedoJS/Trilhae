@@ -110,9 +110,25 @@ export const Container = styled.div`
       font-weight: 700;
     }
 
+    div.firstContent {
+      grid-area: firstC;
+    }
+
+    div.middleContent {
+      grid-area: middleC;
+    }
+
+    div.lastContent {
+      grid-area: lastC;
+    }
+
     @media (min-width: 900px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-template:
+        'firstC middleC'
+        'lastC lastC';
+
       column-gap: 32px;
     }
   }

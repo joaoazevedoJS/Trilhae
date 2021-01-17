@@ -8,7 +8,10 @@ import React, {
 } from 'react';
 import { useField } from '@unform/core';
 
-import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiAlertCircle, FiEye, FiEyeOff } from 'react-icons/fi';
+
+import Tooltip from '../Tooltip';
+
 import { Container } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -43,13 +46,21 @@ const Input: FC<InputProps> = ({ name, ...rest }) => {
         type={showPassword ? 'text' : rest.type}
       />
 
-      {rest.type === 'password' && !showPassword && (
-        <FiEye onClick={handleShowPassword} />
-      )}
+      <article className="icon-group">
+        {rest.type === 'password' && !showPassword && (
+          <FiEye onClick={handleShowPassword} />
+        )}
 
-      {rest.type === 'password' && showPassword && (
-        <FiEyeOff onClick={handleShowPassword} />
-      )}
+        {rest.type === 'password' && showPassword && (
+          <FiEyeOff onClick={handleShowPassword} />
+        )}
+
+        {error && (
+          <Tooltip title={error}>
+            <FiAlertCircle color="#C53030" />
+          </Tooltip>
+        )}
+      </article>
     </Container>
   );
 };

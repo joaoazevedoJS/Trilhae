@@ -96,69 +96,74 @@ const Home: FC = () => {
         </main>
 
         <section>
-          <TitleContentInfo title="O que é o Trilhaê?">
-            <p>
-              A Trilhaê é uma plataforma que oferece desafios para aprimorar as
-              habilidades socioemocionais de seus usuários, preocupada em
-              auxiliar os jovens nos seus futuros profissionais. As empresas
-              buscam colaboradores que sejam capazes de manter bons
-              relacionamentos, de dialogar e compreender o outro e o mundo ao
-              seu redor. Então, comece a sua jornada de aprimorameto no Trilhaê,
-              e vamos juntos abrir novas trilhas para o seu futuro profissional.
-            </p>
+          <div className="firstContent">
+            <TitleContentInfo title="O que é o Trilhaê?">
+              <p>
+                A Trilhaê é uma plataforma que oferece desafios para aprimorar
+                as habilidades socioemocionais de seus usuários, preocupada em
+                auxiliar os jovens nos seus futuros profissionais. As empresas
+                buscam colaboradores que sejam capazes de manter bons
+                relacionamentos, de dialogar e compreender o outro e o mundo ao
+                seu redor. Então, comece a sua jornada de aprimorameto no
+                Trilhaê, e vamos juntos abrir novas trilhas para o seu futuro
+                profissional.
+              </p>
 
-            <img src={MapImg} alt="map" />
-          </TitleContentInfo>
+              <img src={MapImg} alt="map" />
+            </TitleContentInfo>
+          </div>
 
-          <TitleContentInfo title="Mapa para a sua trilha">
-            <p>
-              Para você começar essa trilha de desafios, carregue este mapa com
-              seus objetivos, passo a passo e, claro, as regras.
-            </p>
+          <div className="middleContent">
+            <TitleContentInfo title="Mapa para a sua trilha">
+              <p>
+                Para você começar essa trilha de desafios, carregue este mapa
+                com seus objetivos, passo a passo e, claro, as regras.
+              </p>
 
-            <h2>Objetivo</h2>
-            <p>
-              Completar as 6 fases (Comunicação eficaz, Pensamento Criativo,
-              Resiliência, Empatia, Liderança e Ética no trabalho). Uma fase
-              será liberada por semana.
-            </p>
+              <h2>Objetivo</h2>
+              <p>
+                Completar as 6 fases (Comunicação eficaz, Pensamento Criativo,
+                Resiliência, Empatia, Liderança e Ética no trabalho). Uma fase
+                será liberada por semana.
+              </p>
 
-            <h2>Passo a Passo</h2>
-            <p>
-              <span>
-                <FiCircle /> Faça login ao entrar na nossa plataforma, para
-                acessar o conteúdo da semana.
-              </span>
-              <br />
-              <span>
-                <FiCircle /> Assista a tudo que estiver disponível, leia tudo.
-              </span>
-              <br />
-              <span>
-                <FiCircle /> Tire dúvidas (procure mais sobre o conteúdo pela
-                internet!)
-              </span>
-              <br />
-              <span>
-                <FiCircle /> Realize as tarefas para concluir cada fase.
-              </span>
-            </p>
+              <h2>Passo a Passo</h2>
+              <p>
+                <span>
+                  <FiCircle /> Faça login ao entrar na nossa plataforma, para
+                  acessar o conteúdo da semana.
+                </span>
+                <br />
+                <span>
+                  <FiCircle /> Assista a tudo que estiver disponível, leia tudo.
+                </span>
+                <br />
+                <span>
+                  <FiCircle /> Tire dúvidas (procure mais sobre o conteúdo pela
+                  internet!)
+                </span>
+                <br />
+                <span>
+                  <FiCircle /> Realize as tarefas para concluir cada fase.
+                </span>
+              </p>
 
-            <p>
-              <strong>ATENÇÃO: </strong>se você não conseguir os pontos
-              necessários numa das fases na trilha, você vai ficar um período
-              preso nela e poderá refazer o trecho depois de um tempo.
-            </p>
+              <p>
+                <strong>ATENÇÃO: </strong>se você não conseguir os pontos
+                necessários numa das fases na trilha, você vai ficar um período
+                preso nela e poderá refazer o trecho depois de um tempo.
+              </p>
 
-            <h2>Premiação</h2>
+              <h2>Premiação</h2>
 
-            <p>
-              Ao completar a trilha, enfrentando com êxito todos os desafios,
-              você vai ter acesso a um certificado que as empresas procuram!
-              Nossas empresas parceiras acreditam no desenvolvimento das
-              habilidades socioemocionais dos jovens.
-            </p>
-          </TitleContentInfo>
+              <p>
+                Ao completar a trilha, enfrentando com êxito todos os desafios,
+                você vai ter acesso a um certificado que as empresas procuram!
+                Nossas empresas parceiras acreditam no desenvolvimento das
+                habilidades socioemocionais dos jovens.
+              </p>
+            </TitleContentInfo>
+          </div>
 
           <div className="lastContent">
             <TitleContentInfo title="Contato">
