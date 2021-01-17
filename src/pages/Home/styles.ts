@@ -6,7 +6,7 @@ import backgroundImg2 from '../../assets/images/background-2.png';
 export const Page = styled.div`
   @media (max-width: 540px) {
     footer {
-      padding-bottom: 80px;
+      margin-bottom: 68px;
     }
   }
 `;

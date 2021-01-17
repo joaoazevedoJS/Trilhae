@@ -4,7 +4,8 @@ import background from '../../assets/images/background-signup.png';
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding-top: 32px;
+  padding-top: 64px;
+  overflow-x: hidden;
 
   position: relative;
 
@@ -57,14 +58,13 @@ export const Container = styled.div`
 
 export const Background = styled.div`
   margin-top: 32px;
-  margin-right: -20px;
+  margin-right: -100px;
   height: 350px;
-  background: url(${background}) no-repeat left;
-  background-size: cover;
+  background: url(${background}) no-repeat right;
+  background-size: 400px;
   z-index: -1;
 
   @media (min-width: 450px) {
-    background: url(${background}) no-repeat right;
     height: 300px;
     background-size: 300px;
   }
@@ -75,5 +75,6 @@ export const Background = styled.div`
     width: 100% !important;
     height: 400px;
     background-size: 500px;
+    margin-right: 0px;
   }
 `;

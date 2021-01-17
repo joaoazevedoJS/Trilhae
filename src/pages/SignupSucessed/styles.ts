@@ -54,8 +54,12 @@ export const Container = styled.div`
   @media (min-width: 870px) {
     display: flex;
 
-    div.page-content {
-      width: 530px;
+    div.imgcontent {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 530px 1fr;
+      position: relative;
+      height: 100%;
     }
 
     p {

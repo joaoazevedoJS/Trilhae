@@ -21,25 +21,27 @@ const SignupSucessed: FC = () => {
       <Content>
         <Header goBackHome />
 
-        <div className="page-content">
-          <TitleContentInfo title="Parabéns!">
-            <h3>Você agora faz parte do Thrilhaê</h3>
+        <div className="imgcontent">
+          <div className="page-content">
+            <TitleContentInfo title="Parabéns!">
+              <h3>Você agora faz parte do Thrilhaê</h3>
 
-            <p>
-              Faça o login para começar sua jornada em busca do conhecimento.
-              Complete os desafios dessa trilha e ganhe pontos que podem ser
-              trocados por prêmios.
-            </p>
-          </TitleContentInfo>
+              <p>
+                Faça o login para começar sua jornada em busca do conhecimento.
+                Complete os desafios dessa trilha e ganhe pontos que podem ser
+                trocados por prêmios.
+              </p>
+            </TitleContentInfo>
 
-          <Button onClick={handleNavigationToHelcome} uppercase>
-            Começar
-          </Button>
+            <Button onClick={handleNavigationToHelcome} uppercase>
+              Começar
+            </Button>
 
-          <Link to="/">Voltar para Página Inicial</Link>
+            <Link to="/">Voltar para Página Inicial</Link>
+          </div>
+
+          <Background />
         </div>
-
-        <Background />
       </Content>
 
       <Footer />

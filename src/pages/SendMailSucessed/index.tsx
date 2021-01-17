@@ -14,20 +14,22 @@ const SendMailSucessed: FC = () => {
       <Content>
         <Header goBackHome />
 
-        <div className="page-content">
-          <h3>Sua mensagem foi</h3>
+        <div className="imgcontent">
+          <div className="page-content">
+            <h3>Sua mensagem foi</h3>
 
-          <TitleContentInfo title="enviada com sucesso">
-            <p>
-              Agradecemos seu contato. Aguarde e fique de olho no seu e-mail que
-              logo retornaremos.
-            </p>
-          </TitleContentInfo>
+            <TitleContentInfo title="enviada com sucesso">
+              <p>
+                Agradecemos seu contato. Aguarde e fique de olho no seu e-mail
+                que logo retornaremos.
+              </p>
+            </TitleContentInfo>
 
-          <Link to="/">Voltar para Página Inicial</Link>
+            <Link to="/">Voltar para Página Inicial</Link>
+          </div>
+
+          <Background />
         </div>
-
-        <Background />
       </Content>
       <Footer />
     </Container>
