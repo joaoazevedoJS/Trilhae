@@ -3,12 +3,20 @@ import { shade } from 'polished';
 
 import background from '../../assets/images/background-signin.png';
 
-import FooterCP from '../../components/Footer';
+export const Page = styled.div`
+  min-height: 100vh;
+
+  position: relative;
+
+  footer {
+    position: absolute;
+    margin-top: -15px;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
   place-content: center;
-  height: 100vh;
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
@@ -60,12 +68,12 @@ export const Container = styled.div`
   }
 
   @media (max-width: 750px) {
-    div.form-container {
-      margin-top: 96px;
-    }
+    margin-top: 96px;
   }
 
   @media (min-width: 750px) {
+    height: calc(100vh - 41px);
+
     div.form-container {
       display: grid;
       align-items: center;
@@ -81,7 +89,6 @@ export const Container = styled.div`
 `;
 
 export const Background = styled.div`
-  margin-top: -5px;
   margin-right: -20px;
   height: 250px;
   background: url(${background}) no-repeat right;
@@ -104,14 +111,5 @@ export const Background = styled.div`
     width: 500px !important;
     height: 400px;
     background-size: 500px;
-  }
-`;
-
-export const Footer = styled(FooterCP)`
-  margin-top: 120px;
-
-  @media (min-width: 750px) {
-    position: absolute;
-    bottom: 0px;
   }
 `;

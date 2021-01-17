@@ -9,7 +9,6 @@ export const Page = styled.div`
 
   footer {
     position: absolute;
-    bottom: 0;
   }
 `;
 
@@ -40,7 +39,7 @@ export const Container = styled.div`
     div.input-group {
       display: grid;
       column-gap: 16px;
-      grid-template-columns: 1fr 100px;
+      grid-template-columns: 150px 1fr;
     }
 
     button {
