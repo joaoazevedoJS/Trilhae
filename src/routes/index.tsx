@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 
 import Page from './Page';
+import PrivateRoute from './PrivateRoute';
 
 import Home from '../pages/Home';
 import Signup from '../pages/Signup';
@@ -24,11 +25,15 @@ const Routes: FC = () => (
       <Page path="/sucess/mail" exact component={SendMailSucessed} />
       <Page path="/sucess/signup" exact component={SignupSucessed} />
 
-      <Page path="/logged/helcome" exact component={Helcome} />
-      <Page path="/logged/courses" exact component={Courses} />
-      <Page path="/logged/points" exact component={Points} />
-      <Page path="/logged/awards" exact component={Awards} />
-      <Page path="/logged/classroom/:course" exact component={Classroom} />
+      <PrivateRoute path="/logged/helcome" exact component={Helcome} />
+      <PrivateRoute path="/logged/courses" exact component={Courses} />
+      <PrivateRoute path="/logged/points" exact component={Points} />
+      <PrivateRoute path="/logged/awards" exact component={Awards} />
+      <PrivateRoute
+        path="/logged/classroom/:course"
+        exact
+        component={Classroom}
+      />
 
       <Page path="**" exact component={Home} />
     </Switch>

@@ -1,8 +1,6 @@
 import React, {
   ChangeEvent,
   FC,
-  FormEvent,
-  SelectHTMLAttributes,
   useCallback,
   useEffect,
   useRef,
@@ -11,6 +9,7 @@ import React, {
 import { useHistory } from 'react-router-dom';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
+import * as Yup from 'yup';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
@@ -22,6 +21,7 @@ import ibgeApi from '../../services/ibgeApi';
 
 import { Content } from '../../assets/styles/Content';
 import { Background, Container } from './styles';
+import getValidationErrors from '../../utils/getValidationErrors';
 
 interface SelectProps {
   value: string;
@@ -82,10 +82,43 @@ const Signup: FC = () => {
   }, [history]);
 
   const handleSubmit = useCallback(
-    data => {
-      console.log(data);
+    async data => {
+      try {
+        const schema = Yup.object().shape({
+          name: Yup.string().required('Nome Obrigatório'),
+          email: Yup.string()
+            .required('E-mail obrigatório')
+            .email('Informe um e-mail válido'),
+          cpf: Yup.string().required('CPF obrigatório'),
+          phone: Yup.string().required('Telefone obrigatório'),
+          school: Yup.string(),
+          uf: Yup.string()
+            .length(2, 'UF obrigatória')
+            .required('Estado obrigatória'),
+          city: Yup.string()
+            .min(2, 'Cidade obrigatória')
+            .required('Cidade obrigatória'),
+          password: Yup.string()
+            .min(8, 'Minimo de 8 digitos')
+            .required('Senha obrigatório')
+            .oneOf(
+              [Yup.ref('confirmPassword'), null],
+              'Senha não se correspondem',
+            ),
+          confirmPassword: Yup.string()
+            .min(8, 'Minimo de 8 digitos')
+            .required('Senha obrigatório')
+            .oneOf([Yup.ref('password'), null], 'Senha não se correspondem'),
+        });
 
-      history.push('/sucess/signup');
+        await schema.validate(data, { abortEarly: false });
+
+        history.push('/sucess/signup');
+      } catch (err) {
+        const errors = getValidationErrors(err);
+
+        formRef.current?.setErrors(errors);
+      }
     },
     [history],
   );

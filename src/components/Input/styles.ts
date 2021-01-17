@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
 interface ContainerProps {
@@ -14,6 +14,16 @@ export const Container = styled.div<ContainerProps>`
   display: grid;
   grid-template-columns: 1fr 24px;
   column-gap: 16px;
+
+  ${props =>
+    props.isErrored &&
+    css`
+      border: 1px solid #c53030;
+
+      svg {
+        color: #c53030 !important;
+      }
+    `}
 
   input {
     width: 100%;

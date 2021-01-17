@@ -1,5 +1,7 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useRef } from 'react';
+import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
+import * as Yup from 'yup';
 
 import { useHistory } from 'react-router-dom';
 
@@ -18,8 +20,12 @@ import {
   FooterBackground,
 } from './styles';
 
+import getValidationErrors from '../../utils/getValidationErrors';
+
 const Home: FC = () => {
   const history = useHistory();
+
+  const formRef = useRef<FormHandles>(null);
 
   const handleNavigateToSignup = useCallback(() => {
     history.push('/signup');
@@ -29,13 +35,26 @@ const Home: FC = () => {
     history.push('/signin');
   }, [history]);
 
-  const handleSendMessage = useCallback(() => {
-    history.push('/sucess/mail');
-  }, [history]);
-
   const handleSubmit = useCallback(
-    data => {
-      console.log(data);
+    async data => {
+      try {
+        const schema = Yup.object().shape({
+          name: Yup.string().required('Nome Obrigatório'),
+          phone: Yup.string().required('Telefone obrigatório'),
+          email: Yup.string()
+            .required('E-mail obrigatório')
+            .email('Informe um e-mail válido'),
+          message: Yup.string().required('Digite sua mensagem'),
+        });
+
+        await schema.validate(data, { abortEarly: false });
+
+        history.push('/sucess/mail');
+      } catch (err) {
+        const errors = getValidationErrors(err);
+
+        formRef.current?.setErrors(errors);
+      }
     },
     [history],
   );
@@ -119,7 +138,7 @@ const Home: FC = () => {
           </div>
         </section>
 
-        <Form onSubmit={handleSubmit}>
+        <Form ref={formRef} onSubmit={handleSubmit}>
           <Input name="name" placeholder="Nome: " />
           <Input name="phone" placeholder="Telefone: " />
           <Input name="email" placeholder="E-mail: " />
@@ -130,7 +149,7 @@ const Home: FC = () => {
             <FooterBackground />
           </div>
 
-          <Button onClick={handleSendMessage} uppercase>
+          <Button type="submit" uppercase>
             Enviar
           </Button>
         </Form>
