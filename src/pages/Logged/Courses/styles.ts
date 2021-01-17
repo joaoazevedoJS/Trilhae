@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
+export const Page = styled.div`
+  padding-top: 80px;
+
+  position: relative;
+
+  div.courses {
+    margin-bottom: 80px;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1140px;
   margin: 0 auto;
-
-  margin-top: 80px;
 
   padding: 32px 20px 0 20px;
   position: relative;
@@ -32,14 +45,22 @@ export const Container = styled.div`
 `;
 
 export const CardCourse = styled.div`
+  cursor: pointer;
   padding: 24px;
   width: 100%;
   box-shadow: 0px 0px 8px #00000026;
   border-radius: 20px;
 
+  div.img {
+    width: 100%;
+    background: #00000012;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
   img {
     width: 100%;
-    border-radius: 20px;
+    opacity: 0.9;
   }
 
   h3 {

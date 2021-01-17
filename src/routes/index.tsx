@@ -13,6 +13,7 @@ import Helcome from '../pages/Logged/Helcome';
 import Courses from '../pages/Logged/Courses';
 import Points from '../pages/Logged/Points';
 import Awards from '../pages/Logged/Awards';
+import Classroom from '../pages/Logged/Classroom';
 
 const Routes: FC = () => (
   <BrowserRouter>
@@ -27,6 +28,7 @@ const Routes: FC = () => (
       <Page path="/logged/courses" exact component={Courses} />
       <Page path="/logged/points" exact component={Points} />
       <Page path="/logged/awards" exact component={Awards} />
+      <Page path="/logged/classroom/:course" exact component={Classroom} />
 
       <Page path="**" exact component={Home} />
     </Switch>

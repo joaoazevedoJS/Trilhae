@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
+export const Page = styled.div`
+  padding-top: 80px;
+
+  position: relative;
+
+  div.points {
+    margin-bottom: 80px;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1140px;
   margin: 0 auto;
-
-  margin-top: 80px;
 
   padding: 32px 20px 0 20px;
   position: relative;
@@ -31,7 +44,7 @@ export const Container = styled.div`
   }
 `;
 
-export const CardCourse = styled.div`
+export const CardPoint = styled.div`
   padding: 24px;
   width: 100%;
   box-shadow: 0px 0px 8px #00000026;
@@ -39,7 +52,7 @@ export const CardCourse = styled.div`
 
   h3 {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 28px;
     color: var(--color-blue-primary);
     text-align: center;
 

@@ -3,7 +3,13 @@ import styled from 'styled-components';
 import backgroundImg1 from '../../assets/images/background-1.png';
 import backgroundImg2 from '../../assets/images/background-2.png';
 
-import FooterPG from '../../components/Footer';
+export const Page = styled.div`
+  @media (max-width: 540px) {
+    footer {
+      padding-bottom: 80px;
+    }
+  }
+`;
 
 export const Container = styled.div`
   max-width: 1140px;
@@ -183,11 +189,5 @@ export const ButtonContainerFixed = styled.div`
     position: unset;
     box-shadow: none;
     background: transparent;
-  }
-`;
-
-export const Footer = styled(FooterPG)`
-  @media (max-width: 540px) {
-    padding-bottom: 80px;
   }
 `;

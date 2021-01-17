@@ -5,11 +5,11 @@ import TitleContentInfo from '../../../components/TitleContentInfo';
 import Footer from '../../../components/Footer';
 import Link from '../../../components/Link';
 
-import { CardCourse, Container } from './styles';
+import { Page, CardPoint, Container } from './styles';
 
 const Points: FC = () => {
   return (
-    <>
+    <Page>
       <Container>
         <Header>
           <Link to="/logged/courses">Cursos</Link>
@@ -23,19 +23,19 @@ const Points: FC = () => {
 
         <div className="points">
           {['', '', '', '', '', '', ''].map((course, index) => (
-            <CardCourse key={index}>
+            <CardPoint key={index}>
               <h3>Curso: Comunicação Eficaz</h3>
 
               <p>Etapa: 01</p>
               <p>10 pontos ganhos</p>
               <p>Dia 17/08/2021</p>
-            </CardCourse>
+            </CardPoint>
           ))}
         </div>
       </Container>
 
       <Footer />
-    </>
+    </Page>
   );
 };
 

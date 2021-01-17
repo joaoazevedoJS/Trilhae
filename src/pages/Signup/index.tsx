@@ -5,9 +5,9 @@ import { Form } from '@unform/web';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-
-import { Background, Container } from './styles';
 import Footer from '../../components/Footer';
+
+import { Page, Background, Container } from './styles';
 
 const Signup: FC = () => {
   const history = useHistory();
@@ -26,7 +26,7 @@ const Signup: FC = () => {
   );
 
   return (
-    <>
+    <Page>
       <Container>
         <Header goBackHome>
           <Button blue onClick={handleNavigateToSignin} transparent uppercase>
@@ -63,7 +63,7 @@ const Signup: FC = () => {
       </Container>
 
       <Footer />
-    </>
+    </Page>
   );
 };
 

@@ -3,19 +3,20 @@ import { Form } from '@unform/web';
 
 import { useHistory } from 'react-router-dom';
 
-import {
-  Background,
-  Container,
-  ButtonContainerFixed,
-  FooterBackground,
-  Footer,
-} from './styles';
-
 import Button from '../../components/Button';
 import TitleContentInfo from '../../components/TitleContentInfo';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+
+import {
+  Page,
+  Background,
+  Container,
+  ButtonContainerFixed,
+  FooterBackground,
+} from './styles';
 
 const Home: FC = () => {
   const history = useHistory();
@@ -30,14 +31,17 @@ const Home: FC = () => {
 
   const handleSendMessage = useCallback(() => {
     history.push('/sucess/mail');
-  }, []);
+  }, [history]);
 
-  const handleSubmit = useCallback(data => {
-    console.log(data);
-  }, []);
+  const handleSubmit = useCallback(
+    data => {
+      console.log(data);
+    },
+    [history],
+  );
 
   return (
-    <>
+    <Page>
       <Container>
         <Header>
           <Button blue onClick={handleNavigateToSignin} transparent uppercase>
@@ -133,7 +137,7 @@ const Home: FC = () => {
       </Container>
 
       <Footer />
-    </>
+    </Page>
   );
 };
 
