@@ -86,6 +86,10 @@ export const Container = styled.div`
   section {
     margin-top: 32px;
 
+    h2 {
+      margin-top: 16px;
+    }
+
     @media (min-width: 900px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);

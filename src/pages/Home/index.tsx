@@ -71,7 +71,7 @@ const Home: FC = () => {
         <main>
           <div>
             <h1>
-              Desenvolva competências procuradas pelo mercado de trabalho do
+              Desenvolva competências procuradas pelo mercado de trabalho no
               século XXI
             </h1>
 
@@ -93,40 +93,55 @@ const Home: FC = () => {
         <section>
           <TitleContentInfo title="O que é o Trilhaê?">
             <p>
-              A Trilhaê é uma plataforma que oferece <strong>desafios</strong>
+              A Trilhaê é uma plataforma que oferece <strong>desafios</strong>{' '}
               para aprimorar as <strong>habilidades socioemocionais</strong> de
               seus usuários, preocupada em auxiliar os jovens nos seus futuros
               profissionais. As empresas buscam colaboradores que sejam capazes
               de manter bons relacionamentos, de dialogar e compreender o outro
               e o mundo ao seu redor. Então, comece a sua jornada de
-              aprimorameto no Trilhaê, e vamos juntos abrir
+              aprimorameto no Trilhaê, e vamos juntos abrir{' '}
               <strong>novas trilhas para o seu futuro profissional.</strong>
             </p>
           </TitleContentInfo>
 
           <TitleContentInfo title="Mapa para a sua trilha">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore
+              Para você começar essa trilha de desafios, carregue este mapa com
+              seus objetivos, passo a passo e, claro, as regras.
+            </p>
+
+            <h2>Objetivo</h2>
+            <p>
+              Completar as <strong>6 fases</strong> (Comunicação eficaz,
+              Pensamento Criativo, Resiliência, Empatia, Liderança e Ética no
+              trabalho). Uma fase será liberada por semana.
+            </p>
+
+            <h2>Passo a Passo</h2>
+            <p>
+              -Faça <strong>login</strong> ao entrar na nossa plataforma, para
+              acessar o <strong>conteúdo da semana.</strong>
+              <br />
+              -Assista a tudo que estiver disponível, leia tudo.
+              <br />
+              -Tire dúvidas (procure mais sobre o conteúdo pela internet!)
+              <br />
+              -Realize as tarefas para concluir cada fase.
             </p>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore
+              <strong>ATENÇÃO: </strong>se você não conseguir os pontos
+              necessários numa das fases na trilha, você vai ficar um período
+              preso nela e poderá refazer o trecho depois de um tempo.
             </p>
 
+            <h2>Premiação</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore
+              Ao <strong>completar a trilha</strong>, enfrentando com êxito
+              todos os desafios, você vai ter acesso a um{' '}
+              <strong>certificado</strong> que as empresas procuram! Nossas
+              empresas parceiras acreditam no desenvolvimento das habilidades
+              socioemocionais dos jovens.
             </p>
           </TitleContentInfo>
 

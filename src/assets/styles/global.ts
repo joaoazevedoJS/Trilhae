@@ -23,11 +23,18 @@ export default createGlobalStyle`
     color: var(--color-black-primary);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, strong {
     font-weight: 900;
   }
 
   button {
     cursor: pointer;
+  }
+
+  @media (min-width: 600px) {
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 `;

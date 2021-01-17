@@ -14,7 +14,7 @@ import { Background, Container } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { setToken } from '../../services/token';
 
-const Signin: FC = () => {
+const Forgot: FC = () => {
   const history = useHistory();
 
   const formRef = useRef<FormHandles>(null);
@@ -54,7 +54,7 @@ const Signin: FC = () => {
       <Content>
         <Header goBackHome>
           <Button blue onClick={handleNavigateToSignin} transparent uppercase>
-            Cadastre-se
+            Cadastra-se
           </Button>
         </Header>
 
@@ -72,7 +72,7 @@ const Signin: FC = () => {
             </Button>
 
             <Link className="signup" to="signup">
-              Cadastre-se
+              Cadastra-se
             </Link>
           </Form>
 
@@ -85,4 +85,4 @@ const Signin: FC = () => {
   );
 };
 
-export default Signin;
+export default Forgot;

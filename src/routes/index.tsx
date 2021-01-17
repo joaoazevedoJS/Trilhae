@@ -14,6 +14,7 @@ import Courses from '../pages/Logged/Courses';
 import Points from '../pages/Logged/Points';
 import Awards from '../pages/Logged/Awards';
 import Classroom from '../pages/Logged/Classroom';
+import Forgot from '../pages/Forgot';
 
 const Routes: FC = () => (
   <BrowserRouter>
@@ -21,6 +22,7 @@ const Routes: FC = () => (
       <Page path="/" exact component={Home} />
       <Page path="/signin" exact component={Signin} />
       <Page path="/signup" exact component={Signup} />
+      <Page path="/forgot" exact component={Forgot} />
       <Page path="/sucess/mail" exact component={SendMailSucessed} />
       <Page path="/sucess/signup" exact component={SignupSucessed} />
 
