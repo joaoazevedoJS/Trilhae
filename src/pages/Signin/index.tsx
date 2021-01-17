@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useRef } from 'react';
+import React, { FC, useCallback, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
@@ -12,6 +12,7 @@ import Footer from '../../components/Footer';
 import { Content } from '../../assets/styles/Content';
 import { Background, Container } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
+import { setToken } from '../../services/token';
 
 const Signin: FC = () => {
   const history = useHistory();
@@ -35,6 +36,8 @@ const Signin: FC = () => {
         });
 
         await schema.validate(data, { abortEarly: false });
+
+        setToken('sdjalkgbfsdalz/knavlkajszçfalb');
 
         history.push('/logged/courses');
       } catch (err) {

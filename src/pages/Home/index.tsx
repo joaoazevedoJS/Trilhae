@@ -71,12 +71,13 @@ const Home: FC = () => {
         <main>
           <div>
             <h1>
-              O seu caminho de aprimoramento em habilidades socioemocionais
+              Desenvolva competências procuradas pelo mercado de trabalho do
+              século XXI
             </h1>
 
             <p>
-              Quer ter as ferramentas necessárias para participar do mercado de
-              trabalho? Vem com a gente!
+              Quer se destacar e conseguir prêmios durante uma trilha que
+              prepara você para o trabalho e para a vida? Vem com a gente!
             </p>
 
             <ButtonContainerFixed>
@@ -90,19 +91,20 @@ const Home: FC = () => {
         </main>
 
         <section>
-          <TitleContentInfo title="Quem Somos">
+          <TitleContentInfo title="O que é o Trilhaê?">
             <p>
-              A Trilhaê é uma plataforma que oferece desafios para aprimorar as
-              habilidades socioemocionais de seus usuários, preocupada em
-              auxiliar os jovens nos seus futuros profissionais. As empresas
-              buscam colaboradores que sejam capazes de manter bons
-              relacionamentos, de dialogar e compreender o outro e o mundo ao
-              seu redor. Então, comece a sua jornada de aprimorameto no Trilhaê,
-              e vamos juntos abrir novas trilhas para o seu futuro profissional.
+              A Trilhaê é uma plataforma que oferece <strong>desafios</strong>
+              para aprimorar as <strong>habilidades socioemocionais</strong> de
+              seus usuários, preocupada em auxiliar os jovens nos seus futuros
+              profissionais. As empresas buscam colaboradores que sejam capazes
+              de manter bons relacionamentos, de dialogar e compreender o outro
+              e o mundo ao seu redor. Então, comece a sua jornada de
+              aprimorameto no Trilhaê, e vamos juntos abrir
+              <strong>novas trilhas para o seu futuro profissional.</strong>
             </p>
           </TitleContentInfo>
 
-          <TitleContentInfo title="O que Fazemos">
+          <TitleContentInfo title="Mapa para a sua trilha">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

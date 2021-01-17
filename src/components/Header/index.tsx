@@ -6,6 +6,7 @@ import LogoImg from '../../assets/images/logo.png';
 import HomeIcon from '../../assets/icons/home.svg';
 
 import { Container } from './styles';
+import { getToken } from '../../services/token';
 
 interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
   goBackHome?: boolean;
@@ -13,10 +14,11 @@ interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
 
 const Header: FC<Props> = ({ goBackHome, children, ...rest }) => {
   const history = useHistory();
+  const token = getToken();
 
   const handleNavigationToHome = useCallback(() => {
-    history.push('/');
-  }, [history]);
+    history.push(token ? '/logged/courses' : '/');
+  }, [token, history]);
 
   return (
     <Container {...rest}>
