@@ -4,12 +4,14 @@ import Header from '../../../components/Header';
 import TitleContentInfo from '../../../components/TitleContentInfo';
 import Footer from '../../../components/Footer';
 import Link from '../../../components/Link';
+import Button from '../../../components/Button';
+import MessagePointModal from '../../../components/MessagePointModal';
 
 import TempImg from '../../../assets/images/temp/tempImg-2.jpg';
 
 import { Page, CardAward, Container } from './styles';
-import Button from '../../../components/Button';
-import MessagePointModal from '../../../components/MessagePointModal';
+
+import AwardsTempData from '../../../temp/Awards';
 
 const Awards: FC = () => {
   const [openMessageModal, setOpenMessageModal] = useState({
@@ -17,8 +19,8 @@ const Awards: FC = () => {
     error: false,
   });
 
-  const handleExchangePoint = useCallback((point: string) => {
-    setOpenMessageModal({ open: true, error: point === '0' });
+  const handleExchangePoint = useCallback((point: number) => {
+    setOpenMessageModal({ open: true, error: point === 5 });
   }, []);
 
   return (
@@ -37,14 +39,17 @@ const Awards: FC = () => {
         <TitleContentInfo title="Prêmios" big />
 
         <div className="points">
-          {['1', '1', '0', '1', '1', '0', '1'].map((point, index) => (
-            <CardAward key={index} onClick={() => handleExchangePoint(point)}>
+          {AwardsTempData.map(point => (
+            <CardAward
+              key={point.id}
+              onClick={() => handleExchangePoint(point.id)}
+            >
               <img src={TempImg} alt="Award" />
 
               <div>
-                <h3>Lorem ipsum dolor</h3>
+                <h3>{point.description}</h3>
 
-                <p>100 pontos</p>
+                <p>{point.points} pontos</p>
 
                 <Button uppercase>Trocar</Button>
               </div>

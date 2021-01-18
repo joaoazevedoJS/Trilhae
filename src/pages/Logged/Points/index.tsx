@@ -7,6 +7,8 @@ import Link from '../../../components/Link';
 
 import { Page, CardPoint, Container } from './styles';
 
+import AwardsTempData from '../../../temp/Awards';
+
 const Points: FC = () => {
   return (
     <Page>
@@ -22,8 +24,8 @@ const Points: FC = () => {
         <TitleContentInfo title="Pontuação" big />
 
         <div className="points">
-          {['', '', '', '', '', '', ''].map((course, index) => (
-            <CardPoint key={index}>
+          {AwardsTempData.map(points => (
+            <CardPoint key={points.id}>
               <h3>Curso: Comunicação Eficaz</h3>
 
               <p>Etapa: 01</p>
