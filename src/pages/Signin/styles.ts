@@ -5,7 +5,11 @@ import background from '../../assets/images/background-signin.png';
 
 export const Container = styled.div`
   position: relative;
-  height: calc(100vh - 90px);
+  height: 100vh;
+
+  footer {
+    margin-top: 0;
+  }
 
   div.form-container {
     width: 100%;
@@ -55,6 +59,8 @@ export const Container = styled.div`
   }
 
   @media (min-width: 750px) {
+    height: calc(100vh - 56px);
+
     div.form-container {
       display: grid;
       align-items: center;

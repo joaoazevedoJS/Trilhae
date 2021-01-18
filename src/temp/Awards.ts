@@ -7,37 +7,22 @@ interface AwardsProps {
 const Awards: Array<AwardsProps> = [
   {
     id: 1,
-    description: 'Mentoria sobre carreira em tecnologia',
+    description: 'Mentoria',
     points: 100,
   },
   {
     id: 2,
-    description: 'Mentoria sobre carreira em ciência humanas',
+    description: 'Relatório personalizado',
     points: 100,
   },
   {
     id: 3,
-    description: 'Mentoria sobre carreira em ciência exatas',
+    description: 'Certificado de conclusão',
     points: 100,
   },
   {
     id: 4,
-    description: 'Mentoria sobre carreira em engenharias',
-    points: 100,
-  },
-  {
-    id: 5,
-    description: 'Mentoria sobre na área da saúde',
-    points: 100,
-  },
-  {
-    id: 6,
-    description: 'Mentoria sobre empreendedorismo',
-    points: 100,
-  },
-  {
-    id: 7,
-    description: 'Match com empresa',
+    description: 'Match com empresa parceira',
     points: 500,
   },
 ];
